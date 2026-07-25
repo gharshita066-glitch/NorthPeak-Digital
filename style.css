@@ -1,0 +1,555 @@
+/* ===================================
+   GOOGLE FONT
+=================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===================================
+   VARIABLES
+=================================== */
+
+:root{
+    --primary:#2563EB;
+    --secondary:#0F172A;
+    --accent:#38BDF8;
+    --light:#F8FAFC;
+    --white:#FFFFFF;
+    --gray:#64748B;
+    --shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+/* ===================================
+   RESET
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--light);
+    color:#333;
+    line-height:1.6;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+/* ===================================
+   GENERAL
+=================================== */
+
+section{
+    padding:100px 10%;
+}
+
+section h2{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:60px;
+    color:var(--secondary);
+}
+
+/* ===================================
+   NAVIGATION
+=================================== */
+
+header{
+    position:sticky;
+    top:0;
+    background:rgba(15,23,42,.97);
+    backdrop-filter:blur(8px);
+    z-index:1000;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.navbar{
+    width:90%;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
+
+.logo{
+    color:white;
+    font-size:30px;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    gap:35px;
+}
+
+.nav-links a{
+    color:white;
+    font-weight:500;
+    position:relative;
+    transition:.3s;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    left:0;
+    bottom:-6px;
+    background:var(--accent);
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--accent);
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* ===================================
+   HERO
+=================================== */
+
+#hero{
+    min-height:92vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,#0F172A,#2563EB);
+    color:white;
+}
+
+.hero-content{
+    max-width:750px;
+}
+
+.hero-content h1{
+    font-size:3.8rem;
+    line-height:1.2;
+    margin-bottom:25px;
+}
+
+.hero-content p{
+    font-size:1.2rem;
+    margin-bottom:40px;
+    color:#E2E8F0;
+}
+
+.btn{
+    display:inline-block;
+    background:white;
+    color:var(--primary);
+    padding:16px 40px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+    box-shadow:var(--shadow);
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    background:#E2E8F0;
+}
+
+/* ===================================
+   SECTION ANIMATION
+=================================== */
+
+.card,
+.testimonial,
+.price-card{
+    animation:fadeIn .8s ease;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+/* ===================================
+   SERVICES
+=================================== */
+
+#services{
+    background:var(--white);
+}
+
+.service-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.card{
+    background:var(--white);
+    padding:35px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:var(--shadow);
+    border-top:5px solid var(--primary);
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+.card h3{
+    color:var(--primary);
+    font-size:1.4rem;
+    margin-bottom:20px;
+}
+
+.card p{
+    color:var(--gray);
+}
+
+/* ===================================
+   TESTIMONIALS
+=================================== */
+
+#testimonials{
+    background:#EEF5FF;
+}
+
+.testimonial-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.testimonial{
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    position:relative;
+    transition:.3s;
+}
+
+.testimonial:hover{
+    transform:translateY(-8px);
+}
+
+.testimonial::before{
+    content:"★★★★★";
+    color:#FBBF24;
+    font-size:20px;
+    display:block;
+    margin-bottom:20px;
+}
+
+.testimonial p{
+    font-style:italic;
+    color:var(--gray);
+    margin-bottom:25px;
+}
+
+.testimonial h4{
+    color:var(--primary);
+    font-weight:600;
+}
+
+/* ===================================
+   PRICING
+=================================== */
+
+#pricing{
+    background:var(--white);
+}
+
+.pricing-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+}
+
+.price-card{
+    background:white;
+    padding:45px 35px;
+    text-align:center;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    transition:.35s;
+}
+
+.price-card:hover{
+    transform:translateY(-10px);
+}
+
+.price-card h3{
+    color:var(--secondary);
+    font-size:1.5rem;
+}
+
+.price-card h1{
+    font-size:3rem;
+    color:var(--primary);
+    margin:25px 0;
+}
+
+.price-card ul{
+    margin:30px 0;
+}
+
+.price-card li{
+    margin:15px 0;
+    color:var(--gray);
+}
+
+.price-card button{
+    background:var(--primary);
+    color:white;
+    border:none;
+    padding:15px 35px;
+    border-radius:50px;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.price-card button:hover{
+    background:#1D4ED8;
+    transform:scale(1.05);
+}
+
+/* ===================================
+   FEATURED PLAN
+=================================== */
+
+.featured{
+    background:linear-gradient(135deg,#2563EB,#1D4ED8);
+    color:white;
+    transform:scale(1.05);
+    border:3px solid var(--accent);
+}
+
+.featured h3,
+.featured h1,
+.featured li{
+    color:white;
+}
+
+.featured button{
+    background:white;
+    color:var(--primary);
+    font-weight:600;
+}
+
+.featured button:hover{
+    background:#E2E8F0;
+}
+/* ===================================
+   CONTACT
+=================================== */
+
+#contact{
+    background:#EEF5FF;
+}
+
+form{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+}
+
+input,
+textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:20px;
+    border:2px solid #E2E8F0;
+    border-radius:10px;
+    font-size:16px;
+    font-family:'Poppins',sans-serif;
+    transition:.3s;
+}
+
+input:focus,
+textarea:focus{
+    outline:none;
+    border-color:var(--primary);
+    box-shadow:0 0 8px rgba(37,99,235,.2);
+}
+
+textarea{
+    resize:vertical;
+}
+
+form button{
+    width:100%;
+    background:var(--primary);
+    color:white;
+    border:none;
+    padding:15px;
+    border-radius:50px;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+form button:hover{
+    background:#1D4ED8;
+    transform:translateY(-3px);
+}
+
+#formMessage{
+    margin-top:20px;
+    text-align:center;
+    font-weight:600;
+}
+
+/* ===================================
+   FOOTER
+=================================== */
+
+footer{
+    background:#020617;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+footer p{
+    margin:10px 0;
+}
+
+footer a{
+    color:var(--accent);
+    font-weight:600;
+}
+
+footer a:hover{
+    text-decoration:underline;
+}
+
+/* ===================================
+   RESPONSIVE - TABLET
+=================================== */
+
+@media (max-width: 992px){
+
+    .navbar{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:20px;
+    }
+
+    .hero-content h1{
+        font-size:3rem;
+    }
+
+    .service-container,
+    .testimonial-container,
+    .pricing-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* ===================================
+   RESPONSIVE - MOBILE
+=================================== */
+
+@media (max-width: 768px){
+
+    section{
+        padding:70px 8%;
+    }
+
+    section h2{
+        font-size:2rem;
+    }
+
+    .hero-content h1{
+        font-size:2.4rem;
+    }
+
+    .hero-content p{
+        font-size:1rem;
+    }
+
+    .service-container,
+    .testimonial-container,
+    .pricing-container{
+        grid-template-columns:1fr;
+    }
+
+    .featured{
+        transform:none;
+    }
+
+    form{
+        padding:25px;
+    }
+
+}
+
+/* ===================================
+   SMALL MOBILE
+=================================== */
+
+@media (max-width: 480px){
+
+    .logo{
+        font-size:22px;
+        text-align:center;
+    }
+
+    .nav-links{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+
+    .hero-content h1{
+        font-size:2rem;
+    }
+
+    .btn{
+        padding:14px 30px;
+        font-size:15px;
+    }
+
+    .card,
+    .testimonial,
+    .price-card{
+        padding:25px;
+    }
+
+}
